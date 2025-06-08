@@ -19,8 +19,8 @@ def main():
                 return  # Allows window to close properly
 
         dt = clock.tick(60) / 1000  # Set frame rate
-        
-        player.update(dt)
+
+        player.update(dt)   # Player sprite can spin
         screen.fill((0, 0, 0))  # Black window
         player.draw(screen) # Instantiates player
         pygame.display.flip()   # Loops window back to top

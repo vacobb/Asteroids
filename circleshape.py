@@ -13,6 +13,7 @@ class CircleShape(pygame.sprite.Sprite):
         self.velocity = pygame.Vector2(0, 0)
         self.radius = radius
 
+    # Player sprite
     def draw(self, screen):
         self.screen = screen
         pygame.draw.polygon(screen, (255, 255, 255), self.triangle(), width=2)
