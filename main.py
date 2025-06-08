@@ -17,10 +17,14 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return  # Allows window to close properly
+
+        dt = clock.tick(60) / 1000  # Set frame rate
+        
+        player.update(dt)
         screen.fill((0, 0, 0))  # Black window
         player.draw(screen) # Instantiates player
         pygame.display.flip()   # Loops window back to top
-        dt = clock.tick(60) / 1000  # Set frame rate
+        
 
     print("Starting Asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
