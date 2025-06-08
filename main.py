@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from player import Player
 
 
 def main():
@@ -10,13 +11,15 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)    # Player starts in center of screen
+
     while True:
-        # Allows window to close properly
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                return
-        screen.fill((0, 0, 0))
-        pygame.display.flip()
+                return  # Allows window to close properly
+        screen.fill((0, 0, 0))  # Black window
+        player.draw(screen) # Instantiates player
+        pygame.display.flip()   # Loops window back to top
         dt = clock.tick(60) / 1000  # Set frame rate
 
     print("Starting Asteroids!")
