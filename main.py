@@ -1,4 +1,5 @@
 import pygame
+import sys
 from asteroid import *
 from asteroidfield import *
 from constants import *
@@ -34,6 +35,11 @@ def main():
 
         updatable.update(dt)   # Player sprite can spin
         screen.fill((0, 0, 0))  # Black window
+
+        for asteroid in asteroids:
+            if player.collision_check(asteroid):
+                sys.exit("Game over!")
+
         for sprite in drawable:
             sprite.draw(screen) # Instantiates player
         pygame.display.flip()   # Loops window back to top
