@@ -29,8 +29,3 @@ class Asteroid(CircleShape):
 
             asteroid1.velocity = velocity1
             asteroid2.velocity = velocity2
-
-            print(velocity1, velocity2)
-
-
-
